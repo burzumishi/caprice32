@@ -34,7 +34,7 @@ To "configure" the source code use:
 
 Once finished you can build it with:
 
-  ```make```
+  ``make
 
 To install built binaries into your filesystem:
 
