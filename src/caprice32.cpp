@@ -165,13 +165,12 @@
 #include <zlib.h>
 #include <SDL/SDL.h>
 
+#include "../config.h"
 #include "caprice32.h"
 #include "crtc.h"
 #include "tape.h"
 #include "video.h"
 #include "z80.h"
-
-#define VERSION_STRING "v4.2.0"
 
 #define ERR_INPUT_INIT           1
 #define ERR_VIDEO_INIT           2

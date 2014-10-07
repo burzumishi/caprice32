@@ -22,6 +22,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -34,6 +35,8 @@
 //#define DEBUG_NO_VIDEO
 //#define DEBUG_TAPE
 //#define DEBUG_Z80
+
+#define VERSION_STRING "v5.0.0"
 
 #ifndef _MAX_PATH
  #ifdef _POSIX_PATH_MAX

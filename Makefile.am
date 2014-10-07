@@ -1,17 +1,49 @@
 CC = g++
 
-AM_CFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -finline-functions -s
-AM_CXXFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -finline-functions -s
-AM_CPPFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -finline-functions -s
+ACLOCAL_AMFLAGS = -I m4
 
-bin_PROGRAMS=caprice32
-caprice32_SOURCES=caprice32.cpp crtc.c fdc.c glfunclist.h glfuncs.h rom_mods.c tape.h video.h z80daa.h \
-	caprice32.h crtc.h font.c glfuncs.cpp psg.c tape.c video.cpp z80.c z80.h
+SUBDIRS = src
 
-#  add " -lz" to the following if caprice32 requires the math library
-caprice32_LDFLAGS=`sdl-config --libs` -lz
+EXTRA_DIST=rom autogen.sh README.md
 
-EXTRA_DIST=rom caprice32.conf autogen.sh README.md
+CLEANFILES = caprice32.conf
+
+etcdir = $(sysconfdir)/@PACKAGE@
+etc_DATA = caprice32.conf
+
+do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \
+		-e 's,[@]localstatedir[@],$(localstatedir),g' \
+		-e 's,[@]sysconfdir[@],$(sysconfdir),g' \
+		-e 's,[@]bindir[@],$(bindir),g' \
+		-e 's,[@]mandir[@],$(mandir),g' \
+		-e 's,[@]PERL[@],$(PERL),g' \
+		-e 's,[@]CC[@],$(CC),g' \
+		-e 's,[@]CXX[@],$(CXX),g' \
+		-e 's,[@]PACKAGE[@],$(PACKAGE),g' \
+		-e 's,[@]VERSION[@],$(VERSION),g'
+
+caprice32.conf: caprice32.conf.in Makefile
+	$(do_subst) < $(srcdir)/caprice32.conf.in > caprice32.conf
+
+docdir = $(datarootdir)/doc/@PACKAGE@
+doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog 
+
+rundir = $(datarootdir)/@PACKAGE@
 
 #  install the man page
-man_MANS=caprice32.1
+man_MANS=man/caprice32.1
+
+install-data-hook:
+	@echo "Installing <@PACKAGE@> data files ..."; \
+	mkdir -pv $(sharedstatedir)/@PACKAGE@; \
+	cp -rvf rom $(sharedstatedir)/@PACKAGE@/; \
+	echo "Installing <@PACKAGE@> man pages ..."; \
+	mkdir -pv $(mandir)/man1; \
+	echo "Installing <@PACKAGE@> documentation ..."; \
+	cp man/caprice32.1 $(mandir)/man1/caprice32.1; \
+	echo ""; \
+	echo "<@PACKAGE@> has ben installed on <$(prefix)> directory!"; \
+	echo "You can execute Caprice32 now!"; \
+	echo "";
+
+
