@@ -16,6 +16,8 @@
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
 
+#include "z80.h"
+
 #define FNT_CHAR_WIDTH 8
 #define FNT_CHAR_HEIGHT 8
 #define FNT_CHARS 96

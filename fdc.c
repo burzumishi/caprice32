@@ -50,7 +50,7 @@
                         ("Starfox - CPM version" loads)
 */
 
-#include "cap32.h"
+#include "caprice32.h"
 #include "z80.h"
 
 extern t_CPC CPC;

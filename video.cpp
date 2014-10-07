@@ -31,8 +31,8 @@
 */
 
 #include "video.h"
-#include "cap32.h"
-#include "SDL_opengl.h"
+#include "caprice32.h"
+#include <SDL/SDL_opengl.h>
 #include "glfuncs.h"
 #include <math.h>
 

@@ -163,9 +163,9 @@
 */
 
 #include <zlib.h>
-#include "SDL.h"
+#include <SDL/SDL.h>
 
-#include "cap32.h"
+#include "caprice32.h"
 #include "crtc.h"
 #include "tape.h"
 #include "video.h"
@@ -1422,7 +1422,6 @@ static int joy_layout[12][2] = {
    { CPC_J1_FIRE2,   0 }
 };
 
-#define MAX_ROM_MODS 2
 #include "rom_mods.c"
 
 char chAppPath[_MAX_PATH + 1];
@@ -2221,7 +2220,8 @@ int zip_extract (char *pchZipFile, char *pchFileName, dword dwOffset)
    FILE *pfileOut, *pfileIn;
    z_stream z;
 
-   tmpnam(pchFileName); // generate a unique (temporary) file name for the decompression process
+   /* OBSOLETE */ /* tmpnam(pchFileName); // generate a unique (temporary) file name for the decompression process */
+   mkstemp(pchFileName); // generate a unique (temporary) file name for the decompression process
    if (!(pfileOut = fopen(pchFileName, "wb"))) {
       return ERR_FILE_UNZIP_FAILED; // couldn't create output file
    }
@@ -3952,7 +3952,7 @@ void loadConfiguration (void)
    char chPath[_MAX_PATH + 1];
 
    strncpy(chFileName, chAppPath, sizeof(chFileName)-10);
-   strcat(chFileName, "/cap32.cfg");
+   strcat(chFileName, "/caprice32.conf");
 
    memset(&CPC, 0, sizeof(CPC));
    CPC.model = getConfigValueInt(chFileName, "system", "model", 2); // CPC 6128

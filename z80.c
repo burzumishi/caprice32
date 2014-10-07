@@ -59,7 +59,7 @@
 */
 
 #include "z80.h"
-#include "cap32.h"
+#include "caprice32.h"
 #include "tape.h"
 
 extern t_CPC CPC;

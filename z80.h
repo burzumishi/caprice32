@@ -19,7 +19,7 @@
 #ifndef Z80_H
 #define Z80_H
 
-#include "SDL.h"
+#include <SDL/SDL.h>
 
 typedef unsigned char byte;
 typedef unsigned short word;

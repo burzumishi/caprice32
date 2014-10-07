@@ -38,7 +38,7 @@
 
 #include <math.h>
 
-#include "cap32.h"
+#include "caprice32.h"
 #include "crtc.h"
 #include "z80.h"
 

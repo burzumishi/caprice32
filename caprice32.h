@@ -96,6 +96,8 @@
 #define MF2_RUNNING     2
 #define MF2_INVISIBLE   4
 
+// ROM_MODS
+#define MAX_ROM_MODS 2
 
 
 typedef struct {
@@ -434,7 +436,7 @@ typedef struct {
 
 
 
-// cap32.cpp
+// caprice32.cpp
 void emulator_reset(bool bolMF2Reset);
 
 // fdc.c
