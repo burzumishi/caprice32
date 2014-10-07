@@ -1,12 +1,9 @@
 Caprice32 - Amstrad CPC Emulator
 ----------------
 
-(c) Copyright 1997-2004 Ulrich Doewich
+(c) Copyright 1997-2004 Ulrich Doewich - [Old Caprice32] (http://sourceforge.net/projects/caprice32/)
 
-Modified by Antonio Cao - [@burzumishi] (https://github.com/burzumishi)
-
-[Old Caprice32] (http://sourceforge.net/projects/caprice32/)
-[New Caprice32] (https://github.com/burzumishi/caprice32)
+Modified by Antonio Cao - [@burzumishi] (https://github.com/burzumishi) - [New Caprice32] (https://github.com/burzumishi/caprice32)
 
 
 ###WHAT IS IT?
