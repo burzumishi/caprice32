@@ -27,7 +27,6 @@ AC_CANONICAL_BUILD
 AM_INIT_AUTOMAKE([-Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings])
 
 AC_DEFINE_UNQUOTED([PREFIX], ["/opt/caprice32/"], [Define to the root directory.])
-AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/shared/caprice32/"], [Define to the read-only architecture-independant data directory.])
 AC_DEFINE_UNQUOTED([BINDIR], ["${prefix}/bin/"], [Define Executable Directory.])
 
 # Checks for programs.

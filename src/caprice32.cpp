@@ -3950,8 +3950,11 @@ void loadConfiguration (void)
    char chFileName[_MAX_PATH + 1];
    char chPath[_MAX_PATH + 1];
 
-   strncpy(chFileName, chAppPath, sizeof(chFileName)-10);
-   strcat(chFileName, "/caprice32.conf");
+   strncpy(chFileName, PREFIX, sizeof(chFileName)-10);
+   strcat(chFileName, "/etc/caprice32/caprice32.conf");
+
+   // Create home user dir ~/.caprice32
+   mkdir("~/.caprice32",0775);
 
    memset(&CPC, 0, sizeof(CPC));
    CPC.model = getConfigValueInt(chFileName, "system", "model", 2); // CPC 6128
@@ -4023,7 +4026,7 @@ void loadConfiguration (void)
 
    CPC.max_tracksize = getConfigValueInt(chFileName, "file", "max_track_size", 6144-154);
    strncpy(chPath, chAppPath, sizeof(chPath)-7);
-   strcat(chPath, "/snap");
+   strcat(chPath, "~/.caprice32/snap");
    getConfigValueString(chFileName, "file", "snap_path", CPC.snap_path, sizeof(CPC.snap_path)-1, chPath);
    if (CPC.snap_path[0] == '\0') {
       strcpy(CPC.snap_path, chPath);
@@ -4031,7 +4034,7 @@ void loadConfiguration (void)
    getConfigValueString(chFileName, "file", "snap_file", CPC.snap_file, sizeof(CPC.snap_file)-1, "");
    CPC.snap_zip = getConfigValueInt(chFileName, "file", "snap_zip", 0) & 1;
    strncpy(chPath, chAppPath, sizeof(chPath)-7);
-   strcat(chPath, "/disk");
+   strcat(chPath, "~/.caprice32/disk");
    getConfigValueString(chFileName, "file", "drvA_path", CPC.drvA_path, sizeof(CPC.drvA_path)-1, chPath);
    if (CPC.drvA_path[0] == '\0') {
       strcpy(CPC.drvA_path, chPath);
@@ -4047,7 +4050,7 @@ void loadConfiguration (void)
    CPC.drvB_zip = getConfigValueInt(chFileName, "file", "drvB_zip", 0) & 1;
    CPC.drvB_format = getConfigValueInt(chFileName, "file", "drvB_format", DEFAULT_DISK_FORMAT);
    strncpy(chPath, chAppPath, sizeof(chPath)-7);
-   strcat(chPath, "/tape");
+   strcat(chPath, "~/.caprice32/tape");
    getConfigValueString(chFileName, "file", "tape_path", CPC.tape_path, sizeof(CPC.tape_path)-1, chPath);
    if (CPC.tape_path[0] == '\0') {
       strcpy(CPC.tape_path, chPath);
@@ -4135,20 +4138,20 @@ void loadConfiguration (void)
       }
    }
    strncpy(chPath, chAppPath, sizeof(chPath)-13);
-   strcat(chPath, "/printer.dat");
+   strcat(chPath, "~/.caprice32/printer.dat");
    getConfigValueString(chFileName, "file", "printer_file", CPC.printer_file, sizeof(CPC.printer_file)-1, chPath);
    if (CPC.printer_file[0] == '\0') {
       strcpy(CPC.printer_file, chPath);
    }
    strncpy(chPath, chAppPath, sizeof(chPath)-12);
-   strcat(chPath, "/screen.png");
+   strcat(chPath, "~/.caprice32/screen.png");
    getConfigValueString(chFileName, "file", "sdump_file", CPC.sdump_file, sizeof(CPC.sdump_file)-1, chPath);
    if (CPC.sdump_file[0] == '\0') {
       strcpy(CPC.sdump_file, chPath);
    }
 
-   strncpy(chPath, chAppPath, sizeof(chPath)-5);
-   strcat(chPath, "/rom");
+   strncpy(chPath, PREFIX, sizeof(chPath)-5);
+   strcat(chPath, "/share/caprice32/rom");
    getConfigValueString(chFileName, "rom", "rom_path", CPC.rom_path, sizeof(CPC.rom_path)-1, chPath);
    for (int iRomNum = 0; iRomNum < 16; iRomNum++) { // loop for ROMs 0-15
       char chRomId[14];
