@@ -282,7 +282,7 @@ dword freq_table[MAX_FREQ_ENTRIES] = {
    96000
 };
 
-#include "font.c"
+#include "font.cpp"
 
 static double colours_rgb[32][3] = {
    { 0.5, 0.5, 0.5 }, { 0.5, 0.5, 0.5 },{ 0.0, 1.0, 0.5 }, { 1.0, 1.0, 0.5 },
@@ -1421,7 +1421,7 @@ static int joy_layout[12][2] = {
    { CPC_J1_FIRE2,   0 }
 };
 
-#include "rom_mods.c"
+#include "rom_mods.cpp"
 
 char chAppPath[_MAX_PATH + 1];
 char chROMSelected[_MAX_PATH + 1];

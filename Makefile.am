@@ -1,4 +1,6 @@
 CC = g++
+CPP = g++
+CXX = g++
 
 ACLOCAL_AMFLAGS = -I m4
 
