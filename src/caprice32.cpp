@@ -4031,6 +4031,10 @@ void loadConfiguration (void)
    if (CPC.snap_path[0] == '\0') {
       strcpy(CPC.snap_path, chPath);
    }
+
+   // Create SNAP directory at user home
+   mkdir(CPC.snap_path,0775);
+
    getConfigValueString(chFileName, "file", "snap_file", CPC.snap_file, sizeof(CPC.snap_file)-1, "");
    CPC.snap_zip = getConfigValueInt(chFileName, "file", "snap_zip", 0) & 1;
    strncpy(chPath, chAppPath, sizeof(chPath)-7);
@@ -4039,6 +4043,10 @@ void loadConfiguration (void)
    if (CPC.drvA_path[0] == '\0') {
       strcpy(CPC.drvA_path, chPath);
    }
+
+   // Create DRIVE A directory at user home
+   mkdir(CPC.drvA_path,0775);
+
    getConfigValueString(chFileName, "file", "drvA_file", CPC.drvA_file, sizeof(CPC.drvA_file)-1, "");
    CPC.drvA_zip = getConfigValueInt(chFileName, "file", "drvA_zip", 0) & 1;
    CPC.drvA_format = getConfigValueInt(chFileName, "file", "drvA_format", DEFAULT_DISK_FORMAT);
@@ -4046,6 +4054,10 @@ void loadConfiguration (void)
    if (CPC.drvB_path[0] == '\0') {
       strcpy(CPC.drvB_path, chPath);
    }
+
+   // Create DRIVE B directory at user home
+   mkdir(CPC.drvB_path,0775);
+
    getConfigValueString(chFileName, "file", "drvB_file", CPC.drvB_file, sizeof(CPC.drvB_file)-1, "");
    CPC.drvB_zip = getConfigValueInt(chFileName, "file", "drvB_zip", 0) & 1;
    CPC.drvB_format = getConfigValueInt(chFileName, "file", "drvB_format", DEFAULT_DISK_FORMAT);
@@ -4055,6 +4067,10 @@ void loadConfiguration (void)
    if (CPC.tape_path[0] == '\0') {
       strcpy(CPC.tape_path, chPath);
    }
+
+   // Create TAPE directory at user home
+   mkdir(CPC.tape_path,0775);
+
    getConfigValueString(chFileName, "file", "tape_file", CPC.tape_file, sizeof(CPC.tape_file)-1, "");
    CPC.tape_zip = getConfigValueInt(chFileName, "file", "tape_zip", 0) & 1;
 
@@ -4137,6 +4153,7 @@ void loadConfiguration (void)
          iFmt++; // entry is valid
       }
    }
+
    strncpy(chPath, chAppPath, sizeof(chPath)-13);
    strcat(chPath, "~/.caprice32/printer.dat");
    getConfigValueString(chFileName, "file", "printer_file", CPC.printer_file, sizeof(CPC.printer_file)-1, chPath);
