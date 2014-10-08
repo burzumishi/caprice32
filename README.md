@@ -28,6 +28,10 @@ You will need the following to successfully compile an executable:
 
 ###Build Caprice32
 
+Generate build scripts with autogen:
+
+  ```sh autogen.sh```
+
 To "configure" the source code use:
 
   ```./configure --prefix=/opt/caprice32```
