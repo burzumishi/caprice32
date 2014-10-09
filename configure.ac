@@ -32,6 +32,12 @@ AC_DEFINE_UNQUOTED([BINDIR], ["${prefix}/bin/"], [Define Executable Directory.])
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
+AC_PROG_LEX
+AC_PROG_YACC
+
+AC_CHECK_PROGS([DOXYGEN], [doxygen])
+AM_CONDITIONAL([HAVE_DOXYGEN], [test -n "${DOXYGEN}"])
+
 AC_PROG_LIBTOOL
 AC_PROG_AWK
 AC_LANG([C++])
@@ -68,7 +74,7 @@ AC_STRUCT_TIMEZONE
 AC_FUNC_MALLOC
 AC_CHECK_FUNCS([atexit getcwd memset pow rint strcasecmp strcspn strncasecmp strrchr strtol strtoul])
 
-AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile Doxyfile])
 
 LT_OUTPUT
 AC_OUTPUT
