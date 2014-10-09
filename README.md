@@ -41,9 +41,13 @@ Once finished you can build it with "make":
 
   `make`
 
-To install built binaries into your filesystem type:
+If you want Doxygen documentation to be generated type:
 
-  `make install`
+  `make all-doc`
+
+To install built binaries and documentation into your filesystem type:
+
+  `make all install`
 
 You are ready to run **caprice32** now!
 
