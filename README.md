@@ -1,21 +1,21 @@
 Caprice32 - Amstrad CPC Emulator
 ----------------
 
-(c) Copyright 1997-2004 Ulrich Doewich - [Old Caprice32] (http://sourceforge.net/projects/caprice32/)
+(c) Copyright 1997-2004 **Ulrich Doewich** - [**Original Caprice32**] (http://sourceforge.net/projects/caprice32/)
 
-Modified by Antonio Cao - [@burzumishi] (https://github.com/burzumishi) - [New Caprice32] (https://github.com/burzumishi/caprice32)
+Modified by **Antonio Cao** - [@burzumishi] (https://github.com/burzumishi) - [**New Caprice32**] (https://github.com/burzumishi/caprice32)
 
 
 ###WHAT IS IT?
 
-**Caprice32** is a software emulator of the Amstrad CPC 8bit home computer series. The emulator faithfully imitates the CPC464, CPC664, and CPC6128 models. By recreating the operations of all hardware components at a low level, the emulator achieves a high degree of compatibility with original CPC software. These programs or games can be run unmodified at real-time or higher speeds, depending on the emulator host environment.
+**Caprice32** is a software emulator of the **Amstrad CPC 8bit** home computer series. The emulator faithfully imitates the **CPC464**, **CPC664**, and **CPC6128** models. By recreating the operations of all hardware components at a low level, the emulator achieves a high degree of compatibility with original CPC software. These programs or games can be run unmodified at real-time or higher speeds, depending on the emulator host environment.
 
 
 ###USING THE SOURCE
 
-The source for **Caprice32** is distributed under the terms of the GNU General Public License (GNU GPL), which is included in this archive as LICENSE. Please make sure that you understand the terms and conditions of the license before using the source.
+The source for **Caprice32** is distributed under the terms of the **GNU General Public License** (GNU GPL), which is included in this archive as **LICENSE**. Please make sure that you understand the terms and conditions of the license before using the source.
 
-I encourage you to get involved in the project - please see the **Caprice32** pages on GitHub for contact details.
+I encourage you to get involved in the project - please see the [**Caprice32** page on **GitHub**] (https://github.com/burzumishi/caprice32) for contact details.
 
 
 ###REQUIREMENTS
@@ -29,23 +29,25 @@ You will need the following to successfully compile an executable:
 
 ###Build Caprice32
 
-Generate build scripts with autogen:
+Generate build scripts with "autogen.sh":
 
-  ```sh autogen.sh```
+  `sh autogen.sh`
 
 To "configure" the source code use:
 
-  ```./configure --prefix=/opt/caprice32```
+  `./configure --prefix=/opt/caprice32`
 
-Once finished you can build it with:
+Once finished you can build it with "make":
 
-  ```make ```
+  `make`
 
-To install built binaries into your filesystem:
+To install built binaries into your filesystem type:
 
-  ```make install```
+  `make install`
 
-You are ready to run **caprice32**!
+You are ready to run **caprice32** now!
+
+  `caprice32`
   
 **Keyboard Help**:
 
