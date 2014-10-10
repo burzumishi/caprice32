@@ -1,6 +1,6 @@
-caprice32_CFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -Wno-write-strings -finline-functions -s 
-caprice32_CXXFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -Wno-write-strings -finline-functions -s
-caprice32_CPPFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -Wno-write-strings -finline-functions -s
+caprice32_CFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -Wno-write-strings -Wno-unused-result -finline-functions -s 
+caprice32_CXXFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -Wno-write-strings -Wno-unused-result -finline-functions -s
+caprice32_CPPFLAGS = -O2 -funroll-loops -ffast-math -fomit-frame-pointer -fno-strength-reduce -Wno-write-strings -Wno-unused-result -finline-functions -s
 
 caprice32_LDFLAGS = `sdl-config --libs` -lz
 

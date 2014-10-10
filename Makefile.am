@@ -68,19 +68,24 @@ uninstall-doc:
 	-rmdir $(DESTDIR)$(docdir)
 else
 all-doc:
-	@echo "*** Doxygen is not available ***"
+	@echo "*** WARNING! Doxygen is not available ***"; \
+	echo "*** Documentation will not be built ***";
 
 clean-doc:
-	@echo "*** Doxygen is not available ***"
+	@echo "*** WARNING! Doxygen is not available ***"; \
+	echo "*** Documentation will not be cleaned ***";
 
 distclean-doc:
-	@echo "*** Doxygen is not available ***"
+	@echo "*** WARNING! Doxygen is not available ***"; \
+	echo "*** Documentation will not be cleaned ***";
 
 install-doc:
-	@echo "*** Doxygen is not available ***"
+	@echo "*** WARNING! Doxygen is not available ***"; \
+	echo "*** Documentation will not be installed ***";
 
 uninstall-doc:
-	@echo "*** Doxygen is not available ***"
+	@echo "*** WARNING! Doxygen is not available ***"; \
+	echo "*** Documentation will not be uninstalled ***";
 endif
 
 install-data-hook:
